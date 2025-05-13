@@ -1102,10 +1102,6 @@ plot_tree <- function(tree, effect, feature_name = NULL, ice.alpha = 0.3,
 
 plot_tree_plus <- function(tree, effect, feature_name = NULL, ice.alpha = 0.3,
                       pdp.color = "blue", return.plots = FALSE) {
-  require(ggplot2)
-  require(tidyr)
-  require(data.table)
-  require(gridExtra)
 
   if (is.null(feature_name)) {
     feature_name <- effect$features
