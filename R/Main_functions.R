@@ -1238,7 +1238,31 @@ plot_tree_plus <- function(tree, effect, feature_name = NULL, ice.alpha = 0.3,
 }
 
 
-# visualize imp
+
+
+
+
+
+
+#' Plot Relative Interaction Importance for Each Split
+#'
+#' Visualizes the relative interaction importance (\code{intImp}) of each split in an ICE-based regression tree.
+#' This plot helps identify which splits contribute most to interaction effects in the model.
+#'
+#' @param tree A tree object constructed by \code{compute_tree()}, containing recursive split information and interaction importance scores.
+#' It is expected that the tree includes attributes extractable via \code{extract_split_criteria()}.
+#'
+#' @return A \code{ggplot2} object showing a bar chart of interaction importance values across tree nodes,
+#' with bars colored by tree depth.
+#'
+#' @details
+#' The function uses internal metadata such as split depth, node ID, and feature name to label each bar.
+#' Interaction importance values (\code{intImp}) are computed externally and assumed to be attached to each split node.
+#'
+#' @seealso \code{\link{compute_tree}}, \code{\link{extract_split_criteria}}
+#'
+#' @export
+
 plot_intImp <- function(tree) {
   criteria <- extract_split_criteria(tree)
   criteria <- as.data.table(criteria)
