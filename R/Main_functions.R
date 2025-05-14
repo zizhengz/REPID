@@ -1178,7 +1178,7 @@ plot_tree_plus <- function(tree, effect, feature_name = NULL, ice.alpha = 0.3,
           theme_bw(base_size = 14) +
           theme(strip.background = element_rect(fill = "grey90", color = "black"),
                 plot.title = element_text(face = "plain", size = 14, hjust = 0.5)) +
-          labs(title = paste0("Parent Node (id = ", parent_node$id, ", n = ", length(id_parent), ")"),
+          labs(title = paste0("Parent Node (depth = ", parent_node$depth, ", id = ", parent_node$id, ", n = ", length(id_parent), ")"),
                x = bquote(x[.(feat_num)]),
                y = bquote(hat(f)[.(feat_num)]^{PD}))
 
