@@ -1100,6 +1100,12 @@ plot_tree <- function(tree, effect, feature_name = NULL, ice.alpha = 0.3,
   }
 }
 
+
+
+
+
+
+# Same as `plot_tree()`, with an additional parent node above each pair of nodes after one split
 plot_tree_plus <- function(tree, effect, feature_name = NULL, ice.alpha = 0.3,
                       pdp.color = "blue", return.plots = FALSE) {
 
