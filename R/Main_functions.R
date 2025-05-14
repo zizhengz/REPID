@@ -1236,3 +1236,26 @@ plot_tree_plus <- function(tree, effect, feature_name = NULL, ice.alpha = 0.3,
     return(plots)
   }
 }
+
+
+# visualize imp
+plot_node_improvement <- function(tree) {
+  criteria <- extract_split_criteria(tree)
+  criteria <- as.data.table(criteria)
+  criteria[, depth := as.integer(as.character(depth))]
+  criteria[, intImp := as.numeric(as.character(intImp))]
+  criteria[, node_label := paste0("depth ", depth, ", id ", id, "\n", split.feature)]
+
+  ggplot(criteria, aes(x = reorder(node_label, depth), y = intImp, fill = as.factor(depth))) +
+    geom_col(width = 0.7) +
+    geom_text(aes(label = round(intImp, 3)), vjust = -0.2, size = 3.5) +
+    labs(
+      title = "Relative Interaction Importance (intImp) per Split",
+      x = "Parent Node (depth, id, split feature)",
+      y = "Relative Interaction Importance",
+      fill = "depth"
+    ) +
+    theme_minimal(base_size = 13) +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1))
+}
+
