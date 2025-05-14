@@ -927,7 +927,7 @@ plot_tree_structure <- function(tree, layout) {
     }
   }
 
-  # 给每一层设定颜色
+  # Set color for each depth
   n.depths = length(unique(layout$depth))
   palette = scales::hue_pal()(n.depths)
 
@@ -1239,7 +1239,7 @@ plot_tree_plus <- function(tree, effect, feature_name = NULL, ice.alpha = 0.3,
 
 
 # visualize imp
-plot_node_improvement <- function(tree) {
+plot_intImp <- function(tree) {
   criteria <- extract_split_criteria(tree)
   criteria <- as.data.table(criteria)
   criteria[, depth := as.integer(as.character(depth))]

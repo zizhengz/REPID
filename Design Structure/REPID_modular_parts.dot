@@ -1,0 +1,92 @@
+
+digraph ICE_Tree_Module {
+  rankdir=LR;
+  fontsize=12;
+  nodesep=0.6;
+  fontname="Helvetica";
+
+  node [shape=box, style=filled, fontname="Helvetica", fontsize=12];
+
+  # Cluster: Data Preparation
+  subgraph cluster_0 {
+    label = "Data Preparation";
+    style=filled;
+    color=orange;
+    compute_data_for_ice_splitting [label="compute_data_for_ice_splitting\nExtract ICE matrix and splitting features", fillcolor="#FFE5CC"];
+  }
+
+  # Cluster: Tree Construction Core
+  subgraph cluster_1 {
+    label = "Tree Construction";
+    style=filled;
+    color=deepskyblue;
+    compute_tree [label="compute_tree\nBuild ICE-based decision tree recursively", fillcolor="#D0E6FA"];
+    NodeClass [label="Node (R6 Class)\ncomputeSplit / computeChildren\nTree node object with split and children logic", shape=ellipse, fillcolor="#E8F6FF"];
+  }
+
+  # Cluster: Splitting Mechanics
+  subgraph cluster_2 {
+    label = "Split Evaluation";
+    style=filled;
+    color=forestgreen;
+    split_parent_node [label="split_parent_node\nFind best splitting feature at current node", fillcolor="#D5F5E3"];
+    find_best_binary_split [label="find_best_binary_split\nFind best split point for a single feature", fillcolor="#D5F5E3"];
+    perform_split [label="perform_split\nSplit samples and evaluate objective value", fillcolor="#E8F8E8"];
+    generate_split_candidates [label="generate_split_candidates\nGenerate valid candidate split points", fillcolor="#E8F8E8"];
+    adjust_split_point [label="adjust_split_point\nAvoid split points that match data values", fillcolor="#E8F8E8"];
+    get_closest_point [label="get_closest_point\nMap split points to valid feature values", fillcolor="#E8F8E8"];
+  }
+
+  # Cluster: Objectives
+  subgraph cluster_3 {
+    label = "Objective Functions";
+    style=filled;
+    color=darkseagreen;
+    SS_L2 [label="SS_L2\nSum of squared deviations from PDP"];
+    SS_L1 [label="SS_L1\nMinimum squared deviations from the best-fitting ICE curve"];
+    SS_area [label="SS_area\nSquared difference of area deviation from PDP"];
+    SS_sd [label="SS_sd\nVariance of model predictions"];
+  }
+
+  # Cluster: Plotting
+  subgraph cluster_4 {
+    label = "Visualization";
+    style=filled;
+    color=mediumpurple;
+    prepare_tree_layout [label="prepare_tree_layout\nCompute (x, y) layout for all nodes", fillcolor="#E8DAEF"];
+    plot_tree_structure [label="plot_tree_structure\nVisualize tree structure with edges and labels"];
+    plot_tree [label="plot_tree\nDraw ICE + PDP per child node after split"];
+    plot_tree_plus [label="plot_tree_plus\nAdd parent ICE/PDP view above child nodes"];
+    plot_intImp [label="plot_node_improvement\nBar plot of improvement per split"];
+  }
+
+  # Cluster: Tree Summary
+  subgraph cluster_5 {
+    label = "Split Info Extraction";
+    style=filled;
+    color=hotpink;
+    extract_split_criteria [label="extract_split_criteria\nExtract all internal node split details", fillcolor="#FADBD8"];
+  }
+
+  # Main flow edges
+  compute_tree -> compute_data_for_ice_splitting;
+  compute_tree -> SS_L2;
+  compute_tree -> SS_L1;
+  compute_tree -> SS_area;
+  compute_tree -> SS_sd;
+  compute_tree -> NodeClass;
+
+  NodeClass -> split_parent_node;
+
+  split_parent_node -> find_best_binary_split;
+  find_best_binary_split -> generate_split_candidates;
+  find_best_binary_split -> perform_split;
+  generate_split_candidates -> adjust_split_point;
+  perform_split -> get_closest_point;
+
+  # Visualization dependencies
+  plot_tree -> compute_tree;
+  plot_tree_plus -> compute_tree;
+  plot_tree_structure -> prepare_tree_layout;
+  plot_intImp -> extract_split_criteria;
+}

@@ -1,0 +1,266 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2033pt" height="864pt" viewBox="0.00 0.00 2032.63 864.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 860)">
+<title>ICE_Tree_Module</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-860 2028.63,-860 2028.63,4 -4,4"/>
+<g id="clust1" class="cluster">
+<title>cluster_0</title>
+<polygon fill="orange" stroke="orange" points="636.47,-331 636.47,-406 879.22,-406 879.22,-331 636.47,-331"/>
+<text text-anchor="middle" x="757.85" y="-391.2" font-family="Helvetica,sans-Serif" font-size="12.00">Data Preparation</text>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_1</title>
+<polygon fill="deepskyblue" stroke="deepskyblue" points="300.8,-414 300.8,-525 944.13,-525 944.13,-414 300.8,-414"/>
+<text text-anchor="middle" x="622.46" y="-510.2" font-family="Helvetica,sans-Serif" font-size="12.00">Tree Construction</text>
+</g>
+<g id="clust3" class="cluster">
+<title>cluster_2</title>
+<polygon fill="forestgreen" stroke="forestgreen" points="964.13,-392 964.13,-547 2016.63,-547 2016.63,-392 964.13,-392"/>
+<text text-anchor="middle" x="1490.38" y="-532.2" font-family="Helvetica,sans-Serif" font-size="12.00">Split Evaluation</text>
+</g>
+<g id="clust4" class="cluster">
+<title>cluster_3</title>
+<polygon fill="darkseagreen" stroke="darkseagreen" points="584.45,-8 584.45,-323 931.24,-323 931.24,-8 584.45,-8"/>
+<text text-anchor="middle" x="757.85" y="-308.2" font-family="Helvetica,sans-Serif" font-size="12.00">Objective Functions</text>
+</g>
+<g id="clust5" class="cluster">
+<title>cluster_4</title>
+<polygon fill="mediumpurple" stroke="mediumpurple" points="8,-533 8,-848 533.55,-848 533.55,-533 8,-533"/>
+<text text-anchor="middle" x="270.78" y="-833.2" font-family="Helvetica,sans-Serif" font-size="12.00">Visualization</text>
+</g>
+<g id="clust6" class="cluster">
+<title>cluster_5</title>
+<polygon fill="hotpink" stroke="hotpink" points="316.13,-331 316.13,-406 536.23,-406 536.23,-331 316.13,-331"/>
+<text text-anchor="middle" x="426.18" y="-391.2" font-family="Helvetica,sans-Serif" font-size="12.00">Split Info Extraction</text>
+</g>
+<!-- compute_data_for_ice_splitting -->
+<g id="node1" class="node">
+<title>compute_data_for_ice_splitting</title>
+<polygon fill="#ffe5cc" stroke="black" points="871.22,-375.4 644.47,-375.4 644.47,-338.6 871.22,-338.6 871.22,-375.4"/>
+<text text-anchor="middle" x="757.85" y="-360.6" font-family="Helvetica,sans-Serif" font-size="12.00">compute_data_for_ice_splitting</text>
+<text text-anchor="middle" x="757.85" y="-346.2" font-family="Helvetica,sans-Serif" font-size="12.00">Extract ICE matrix and splitting features</text>
+</g>
+<!-- compute_tree -->
+<g id="node2" class="node">
+<title>compute_tree</title>
+<polygon fill="#d0e6fa" stroke="black" points="543.56,-458.4 308.8,-458.4 308.8,-421.6 543.56,-421.6 543.56,-458.4"/>
+<text text-anchor="middle" x="426.18" y="-443.6" font-family="Helvetica,sans-Serif" font-size="12.00">compute_tree</text>
+<text text-anchor="middle" x="426.18" y="-429.2" font-family="Helvetica,sans-Serif" font-size="12.00">Build ICE-based decision tree recursively</text>
+</g>
+<!-- compute_tree&#45;&gt;compute_data_for_ice_splitting -->
+<g id="edge1" class="edge">
+<title>compute_tree-&gt;compute_data_for_ice_splitting</title>
+<path fill="none" stroke="black" d="M523.29,-421.12C530.17,-419.48 536.99,-417.77 543.56,-416 559.85,-411.62 563.4,-408.83 579.56,-404 609.05,-395.19 641.54,-386.33 670.57,-378.72"/>
+<polygon fill="black" stroke="black" points="671.25,-382.15 680.04,-376.24 669.48,-375.38 671.25,-382.15"/>
+</g>
+<!-- NodeClass -->
+<g id="node3" class="node">
+<title>NodeClass</title>
+<ellipse fill="#e8f6ff" stroke="black" cx="757.85" cy="-458" rx="178.28" ry="36.2"/>
+<text text-anchor="middle" x="757.85" y="-468.8" font-family="Helvetica,sans-Serif" font-size="12.00">Node (R6 Class)</text>
+<text text-anchor="middle" x="757.85" y="-454.4" font-family="Helvetica,sans-Serif" font-size="12.00">computeSplit / computeChildren</text>
+<text text-anchor="middle" x="757.85" y="-440" font-family="Helvetica,sans-Serif" font-size="12.00">Tree node object with split and children logic</text>
+</g>
+<!-- compute_tree&#45;&gt;NodeClass -->
+<g id="edge6" class="edge">
+<title>compute_tree-&gt;NodeClass</title>
+<path fill="none" stroke="black" d="M543.87,-446.37C553.63,-446.9 563.63,-447.45 573.73,-448"/>
+<polygon fill="black" stroke="black" points="573.47,-451.49 583.65,-448.54 573.85,-444.5 573.47,-451.49"/>
+</g>
+<!-- SS_L2 -->
+<g id="node10" class="node">
+<title>SS_L2</title>
+<polygon fill="lightgrey" stroke="black" points="864.56,-52.4 651.13,-52.4 651.13,-15.6 864.56,-15.6 864.56,-52.4"/>
+<text text-anchor="middle" x="757.85" y="-37.6" font-family="Helvetica,sans-Serif" font-size="12.00">SS_L2</text>
+<text text-anchor="middle" x="757.85" y="-23.2" font-family="Helvetica,sans-Serif" font-size="12.00">Sum of squared deviations from PDP</text>
+</g>
+<!-- compute_tree&#45;&gt;SS_L2 -->
+<g id="edge2" class="edge">
+<title>compute_tree-&gt;SS_L2</title>
+<path fill="none" stroke="black" d="M538.29,-421.15C540.14,-419.55 541.9,-417.83 543.56,-416 646.19,-302.74 477.99,-188.21 579.56,-74 595.31,-56.29 617.08,-45.53 639.98,-39.17"/>
+<polygon fill="black" stroke="black" points="640.58,-42.62 649.45,-36.83 638.9,-35.83 640.58,-42.62"/>
+</g>
+<!-- SS_L1 -->
+<g id="node11" class="node">
+<title>SS_L1</title>
+<polygon fill="lightgrey" stroke="black" points="923.24,-132.4 592.45,-132.4 592.45,-95.6 923.24,-95.6 923.24,-132.4"/>
+<text text-anchor="middle" x="757.85" y="-117.6" font-family="Helvetica,sans-Serif" font-size="12.00">SS_L1</text>
+<text text-anchor="middle" x="757.85" y="-103.2" font-family="Helvetica,sans-Serif" font-size="12.00">Minimum squared deviations from the best-fitting ICE curve</text>
+</g>
+<!-- compute_tree&#45;&gt;SS_L1 -->
+<g id="edge3" class="edge">
+<title>compute_tree-&gt;SS_L1</title>
+<path fill="none" stroke="black" d="M537.74,-421.47C539.78,-419.78 541.73,-417.96 543.56,-416 623.85,-330.16 500.07,-240.58 579.56,-154 584.87,-148.22 590.81,-143.19 597.23,-138.81"/>
+<polygon fill="black" stroke="black" points="598.95,-141.86 605.65,-133.65 595.29,-135.89 598.95,-141.86"/>
+</g>
+<!-- SS_area -->
+<g id="node12" class="node">
+<title>SS_area</title>
+<polygon fill="lightgrey" stroke="black" points="890.25,-212.4 625.44,-212.4 625.44,-175.6 890.25,-175.6 890.25,-212.4"/>
+<text text-anchor="middle" x="757.85" y="-197.6" font-family="Helvetica,sans-Serif" font-size="12.00">SS_area</text>
+<text text-anchor="middle" x="757.85" y="-183.2" font-family="Helvetica,sans-Serif" font-size="12.00">Squared difference of area deviation from PDP</text>
+</g>
+<!-- compute_tree&#45;&gt;SS_area -->
+<g id="edge4" class="edge">
+<title>compute_tree-&gt;SS_area</title>
+<path fill="none" stroke="black" d="M537.59,-421.33C539.68,-419.68 541.67,-417.9 543.56,-416 601.63,-357.46 522.04,-293.08 579.56,-234 589.65,-223.64 601.8,-215.71 614.96,-209.67"/>
+<polygon fill="black" stroke="black" points="615.92,-213.06 623.81,-205.99 613.23,-206.6 615.92,-213.06"/>
+</g>
+<!-- SS_sd -->
+<g id="node13" class="node">
+<title>SS_sd</title>
+<polygon fill="lightgrey" stroke="black" points="844.89,-292.4 670.8,-292.4 670.8,-255.6 844.89,-255.6 844.89,-292.4"/>
+<text text-anchor="middle" x="757.85" y="-277.6" font-family="Helvetica,sans-Serif" font-size="12.00">SS_sd</text>
+<text text-anchor="middle" x="757.85" y="-263.2" font-family="Helvetica,sans-Serif" font-size="12.00">Variance of model predictions</text>
+</g>
+<!-- compute_tree&#45;&gt;SS_sd -->
+<g id="edge5" class="edge">
+<title>compute_tree-&gt;SS_sd</title>
+<path fill="none" stroke="black" d="M536.66,-421.23C539.06,-419.61 541.36,-417.87 543.56,-416 577.92,-386.71 546.03,-351.24 579.56,-321 601.58,-301.14 631.03,-289.51 659.6,-282.75"/>
+<polygon fill="black" stroke="black" points="659.97,-286.25 669,-280.71 658.49,-279.41 659.97,-286.25"/>
+</g>
+<!-- split_parent_node -->
+<g id="node4" class="node">
+<title>split_parent_node</title>
+<polygon fill="#d5f5e3" stroke="black" points="1206.26,-476.4 972.13,-476.4 972.13,-439.6 1206.26,-439.6 1206.26,-476.4"/>
+<text text-anchor="middle" x="1089.2" y="-461.6" font-family="Helvetica,sans-Serif" font-size="12.00">split_parent_node</text>
+<text text-anchor="middle" x="1089.2" y="-447.2" font-family="Helvetica,sans-Serif" font-size="12.00">Find best splitting feature at current node</text>
+</g>
+<!-- NodeClass&#45;&gt;split_parent_node -->
+<g id="edge7" class="edge">
+<title>NodeClass-&gt;split_parent_node</title>
+<path fill="none" stroke="black" d="M936.54,-458C944.6,-458 952.62,-458 960.52,-458"/>
+<polygon fill="black" stroke="black" points="960.49,-461.5 970.49,-458 960.49,-454.5 960.49,-461.5"/>
+</g>
+<!-- find_best_binary_split -->
+<g id="node5" class="node">
+<title>find_best_binary_split</title>
+<polygon fill="#d5f5e3" stroke="black" points="1464.37,-476.4 1242.26,-476.4 1242.26,-439.6 1464.37,-439.6 1464.37,-476.4"/>
+<text text-anchor="middle" x="1353.32" y="-461.6" font-family="Helvetica,sans-Serif" font-size="12.00">find_best_binary_split</text>
+<text text-anchor="middle" x="1353.32" y="-447.2" font-family="Helvetica,sans-Serif" font-size="12.00">Find best split point for a single feature</text>
+</g>
+<!-- split_parent_node&#45;&gt;find_best_binary_split -->
+<g id="edge8" class="edge">
+<title>split_parent_node-&gt;find_best_binary_split</title>
+<path fill="none" stroke="black" d="M1206.69,-458C1214.68,-458 1222.75,-458 1230.77,-458"/>
+<polygon fill="black" stroke="black" points="1230.55,-461.5 1240.55,-458 1230.55,-454.5 1230.55,-461.5"/>
+</g>
+<!-- perform_split -->
+<g id="node6" class="node">
+<title>perform_split</title>
+<polygon fill="#e8f8e8" stroke="black" points="1742.51,-436.4 1500.37,-436.4 1500.37,-399.6 1742.51,-399.6 1742.51,-436.4"/>
+<text text-anchor="middle" x="1621.44" y="-421.6" font-family="Helvetica,sans-Serif" font-size="12.00">perform_split</text>
+<text text-anchor="middle" x="1621.44" y="-407.2" font-family="Helvetica,sans-Serif" font-size="12.00">Split samples and evaluate objective value</text>
+</g>
+<!-- find_best_binary_split&#45;&gt;perform_split -->
+<g id="edge10" class="edge">
+<title>find_best_binary_split-&gt;perform_split</title>
+<path fill="none" stroke="black" d="M1464.87,-441.38C1472.73,-440.2 1480.7,-439 1488.66,-437.81"/>
+<polygon fill="black" stroke="black" points="1489.04,-441.29 1498.41,-436.34 1488,-434.37 1489.04,-441.29"/>
+</g>
+<!-- generate_split_candidates -->
+<g id="node7" class="node">
+<title>generate_split_candidates</title>
+<polygon fill="#e8f8e8" stroke="black" points="1726.17,-516.4 1516.72,-516.4 1516.72,-479.6 1726.17,-479.6 1726.17,-516.4"/>
+<text text-anchor="middle" x="1621.44" y="-501.6" font-family="Helvetica,sans-Serif" font-size="12.00">generate_split_candidates</text>
+<text text-anchor="middle" x="1621.44" y="-487.2" font-family="Helvetica,sans-Serif" font-size="12.00">Generate valid candidate split points</text>
+</g>
+<!-- find_best_binary_split&#45;&gt;generate_split_candidates -->
+<g id="edge9" class="edge">
+<title>find_best_binary_split-&gt;generate_split_candidates</title>
+<path fill="none" stroke="black" d="M1464.87,-474.62C1478.25,-476.63 1491.96,-478.69 1505.41,-480.71"/>
+<polygon fill="black" stroke="black" points="1504.73,-484.15 1515.14,-482.17 1505.77,-477.22 1504.73,-484.15"/>
+</g>
+<!-- get_closest_point -->
+<g id="node9" class="node">
+<title>get_closest_point</title>
+<polygon fill="#e8f8e8" stroke="black" points="2003.29,-436.4 1783.85,-436.4 1783.85,-399.6 2003.29,-399.6 2003.29,-436.4"/>
+<text text-anchor="middle" x="1893.57" y="-421.6" font-family="Helvetica,sans-Serif" font-size="12.00">get_closest_point</text>
+<text text-anchor="middle" x="1893.57" y="-407.2" font-family="Helvetica,sans-Serif" font-size="12.00">Map split points to valid feature values</text>
+</g>
+<!-- perform_split&#45;&gt;get_closest_point -->
+<g id="edge12" class="edge">
+<title>perform_split-&gt;get_closest_point</title>
+<path fill="none" stroke="black" d="M1742.89,-418C1752.6,-418 1762.41,-418 1772.12,-418"/>
+<polygon fill="black" stroke="black" points="1771.94,-421.5 1781.94,-418 1771.94,-414.5 1771.94,-421.5"/>
+</g>
+<!-- adjust_split_point -->
+<g id="node8" class="node">
+<title>adjust_split_point</title>
+<polygon fill="#e8f8e8" stroke="black" points="2008.63,-516.4 1778.51,-516.4 1778.51,-479.6 2008.63,-479.6 2008.63,-516.4"/>
+<text text-anchor="middle" x="1893.57" y="-501.6" font-family="Helvetica,sans-Serif" font-size="12.00">adjust_split_point</text>
+<text text-anchor="middle" x="1893.57" y="-487.2" font-family="Helvetica,sans-Serif" font-size="12.00">Avoid split points that match data values</text>
+</g>
+<!-- generate_split_candidates&#45;&gt;adjust_split_point -->
+<g id="edge11" class="edge">
+<title>generate_split_candidates-&gt;adjust_split_point</title>
+<path fill="none" stroke="black" d="M1726.49,-498C1739.73,-498 1753.39,-498 1766.92,-498"/>
+<polygon fill="black" stroke="black" points="1766.73,-501.5 1776.73,-498 1766.73,-494.5 1766.73,-501.5"/>
+</g>
+<!-- prepare_tree_layout -->
+<g id="node14" class="node">
+<title>prepare_tree_layout</title>
+<polygon fill="#e8daef" stroke="black" points="525.55,-817.4 326.81,-817.4 326.81,-780.6 525.55,-780.6 525.55,-817.4"/>
+<text text-anchor="middle" x="426.18" y="-802.6" font-family="Helvetica,sans-Serif" font-size="12.00">prepare_tree_layout</text>
+<text text-anchor="middle" x="426.18" y="-788.2" font-family="Helvetica,sans-Serif" font-size="12.00">Compute (x, y) layout for all nodes</text>
+</g>
+<!-- plot_tree_structure -->
+<g id="node15" class="node">
+<title>plot_tree_structure</title>
+<polygon fill="lightgrey" stroke="black" points="272.8,-817.4 16,-817.4 16,-780.6 272.8,-780.6 272.8,-817.4"/>
+<text text-anchor="middle" x="144.4" y="-802.6" font-family="Helvetica,sans-Serif" font-size="12.00">plot_tree_structure</text>
+<text text-anchor="middle" x="144.4" y="-788.2" font-family="Helvetica,sans-Serif" font-size="12.00">Visualize tree structure with edges and labels</text>
+</g>
+<!-- plot_tree_structure&#45;&gt;prepare_tree_layout -->
+<g id="edge15" class="edge">
+<title>plot_tree_structure-&gt;prepare_tree_layout</title>
+<path fill="none" stroke="black" d="M273.01,-799C287.08,-799 301.32,-799 315.16,-799"/>
+<polygon fill="black" stroke="black" points="315.15,-802.5 325.15,-799 315.15,-795.5 315.15,-802.5"/>
+</g>
+<!-- plot_tree -->
+<g id="node16" class="node">
+<title>plot_tree</title>
+<polygon fill="lightgrey" stroke="black" points="262.61,-657.4 26.18,-657.4 26.18,-620.6 262.61,-620.6 262.61,-657.4"/>
+<text text-anchor="middle" x="144.4" y="-642.6" font-family="Helvetica,sans-Serif" font-size="12.00">plot_tree</text>
+<text text-anchor="middle" x="144.4" y="-628.2" font-family="Helvetica,sans-Serif" font-size="12.00">Draw ICE + PDP per child node after split</text>
+</g>
+<!-- plot_tree&#45;&gt;compute_tree -->
+<g id="edge13" class="edge">
+<title>plot_tree-&gt;compute_tree</title>
+<path fill="none" stroke="black" d="M240.28,-620.15C252.22,-614.78 263.48,-607.87 272.8,-599 298.86,-574.17 278.51,-551.27 300.8,-523 320.22,-498.36 349.03,-478.49 374.02,-464.37"/>
+<polygon fill="black" stroke="black" points="375.68,-467.46 382.78,-459.6 372.32,-461.32 375.68,-467.46"/>
+</g>
+<!-- plot_tree_plus -->
+<g id="node17" class="node">
+<title>plot_tree_plus</title>
+<polygon fill="lightgrey" stroke="black" points="271.13,-737.4 17.66,-737.4 17.66,-700.6 271.13,-700.6 271.13,-737.4"/>
+<text text-anchor="middle" x="144.4" y="-722.6" font-family="Helvetica,sans-Serif" font-size="12.00">plot_tree_plus</text>
+<text text-anchor="middle" x="144.4" y="-708.2" font-family="Helvetica,sans-Serif" font-size="12.00">Add parent ICE/PDP view above child nodes</text>
+</g>
+<!-- plot_tree_plus&#45;&gt;compute_tree -->
+<g id="edge14" class="edge">
+<title>plot_tree_plus-&gt;compute_tree</title>
+<path fill="none" stroke="black" d="M244.61,-700.2C255.23,-694.8 264.98,-687.87 272.8,-679 319.35,-626.14 262.19,-581.92 300.8,-523 317.55,-497.43 345.22,-477.81 370.21,-464.09"/>
+<polygon fill="black" stroke="black" points="371.79,-467.22 379.01,-459.46 368.53,-461.02 371.79,-467.22"/>
+</g>
+<!-- plot_intImp -->
+<g id="node18" class="node">
+<title>plot_intImp</title>
+<polygon fill="lightgrey" stroke="black" points="238.77,-577.4 50.03,-577.4 50.03,-540.6 238.77,-540.6 238.77,-577.4"/>
+<text text-anchor="middle" x="144.4" y="-562.6" font-family="Helvetica,sans-Serif" font-size="12.00">plot_node_improvement</text>
+<text text-anchor="middle" x="144.4" y="-548.2" font-family="Helvetica,sans-Serif" font-size="12.00">Bar plot of improvement per split</text>
+</g>
+<!-- extract_split_criteria -->
+<g id="node19" class="node">
+<title>extract_split_criteria</title>
+<polygon fill="#fadbd8" stroke="black" points="528.23,-375.4 324.13,-375.4 324.13,-338.6 528.23,-338.6 528.23,-375.4"/>
+<text text-anchor="middle" x="426.18" y="-360.6" font-family="Helvetica,sans-Serif" font-size="12.00">extract_split_criteria</text>
+<text text-anchor="middle" x="426.18" y="-346.2" font-family="Helvetica,sans-Serif" font-size="12.00">Extract all internal node split details</text>
+</g>
+<!-- plot_intImp&#45;&gt;extract_split_criteria -->
+<g id="edge16" class="edge">
+<title>plot_intImp-&gt;extract_split_criteria</title>
+<path fill="none" stroke="black" d="M159.72,-540.22C185,-508.22 240.59,-442.82 300.8,-404 315.66,-394.42 332.76,-386.36 349.44,-379.78"/>
+<polygon fill="black" stroke="black" points="350.22,-383.22 358.32,-376.4 347.73,-376.68 350.22,-383.22"/>
+</g>
+</g>
+</svg>
