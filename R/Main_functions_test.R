@@ -23,11 +23,12 @@ set.seed(1234)
 mod = ranger(y ~ ., data = dat, num.trees = 500)
 pred = predict.function = function(model, newdata) predict(model, newdata)$predictions
 model = Predictor$new(mod, data = X, y = dat$y, predict.function = pred)
-effect = FeatureEffects$new(model, method = "ice", grid.size = 20, features = "x1")
+effect = FeatureEffects$new(model, method = "ice", grid.size = 20, features = "x2")
 
-tree = compute_tree(effect, X, n.split = 2)
+tree = compute_tree(effect, X, n.split = 4)
 splits = extract_split_criteria(tree)
 layout = prepare_tree_layout(tree)
 tree_bone = plot_tree_structure(tree, layout)
 tree_bone
 plots = plot_tree(tree, effect)
+# try ggparty
